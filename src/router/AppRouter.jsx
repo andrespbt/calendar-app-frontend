@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { LoginPage } from '../auth';
+import { Spinner } from '../auth/components/Spinner';
 import { CalendarPage } from '../calendar';
 import { useAuthStore } from '../hooks';
 
@@ -14,7 +15,7 @@ export const AppRouter = () => {
   }, []);
 
   if (status === 'checking') {
-    return <h3>Cargando...</h3>;
+    return <Spinner />;
   }
 
   return (
